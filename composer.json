@@ -1,9 +1,8 @@
 {
-    "name": "php-activerecord/php-activerecord",
+    "name": "SailingGoat/php-activerecord",
     "type": "library",
     "description": "php-activerecord is an open source ORM library based on the ActiveRecord pattern.",
     "keywords": ["activerecord", "orm"],
-    "homepage": "http://www.phpactiverecord.org/",
     "license": "MIT",
     "require": {
         "php": ">=7.0"
