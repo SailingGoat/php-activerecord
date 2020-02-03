@@ -3,7 +3,7 @@ install: composer install --prefer-source --dev
 services:
   - mysql
   - postgresql
-  - memcache
+  - memcached
 
 env: PHPAR_MYSQL=mysql://root@127.0.0.1/phpar_test PHPAR_PGSQL=pgsql://postgres@127.0.0.1/phpar_test
 
