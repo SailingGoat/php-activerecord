@@ -343,7 +343,9 @@ class AdapterTest extends DatabaseTest
 		if (!($pdo_statement instanceof PDOStatement)) {
 			$this->fail('Connection->query_column_info did not return PDOStatement');
 		}
-		$this->assert_greater_than(0, $pdo_statement->rowCount());
+		// Assert at least one record returned
+		$record = $pdo_statement->fetch(\PDO::FETCH_ASSOC);
+		$this->assertTrue(is_array($record));
 	}
 
 	public function test_query_table_info()
@@ -352,7 +354,9 @@ class AdapterTest extends DatabaseTest
 		if (!($pdo_statement instanceof PDOStatement)) {
 			$this->fail('Connection->query_for_tables() did not return PDOStatement');
 		}
-		$this->assert_greater_than(0, $pdo_statement->rowCount());
+		// Assert at least one record returned
+		$record = $pdo_statement->fetch(\PDO::FETCH_ASSOC);
+		$this->assertTrue(is_array($record));
 	}
 
 	public function test_query_table_info_must_return_one_field()
