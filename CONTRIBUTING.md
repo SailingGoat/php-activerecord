@@ -1,7 +1,6 @@
 # Contributing to PHP ActiveRecord #
 
-We always appreciate contributions to PHP ActiveRecord, but we are not always able to respond as quickly as we would like.
-Please do not take delays personal and feel free to remind us by commenting on issues.
+The purpose of this fork is maintain Version 1.2.0 for future compatibility with PHP 7.x. Any contributions towards this mean are appreciated.
 
 ### Testing ###
 

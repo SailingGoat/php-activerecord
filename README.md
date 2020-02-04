@@ -1,14 +1,13 @@
 # PHP ActiveRecord - Version 1.0 #
 
-[![Build Status](https://travis-ci.org/jpfuentes2/php-activerecord.png?branch=master)](https://travis-ci.org/jpfuentes2/php-activerecord)
+[![Build Status](https://travis-ci.org/SailingGoat/php-activerecord.png?branch=master)](https://travis-ci.org/SailingGoat/php-activerecord)
 
-by 
+* Originally created by [@kla](https://github.com/kla) - Kien La
+* Forked and maintained by [@jpfuentes2](https://github.com/jpfuentes2) - Jacques Fuentes
+* Forked and maintained here for PHP 7.x future use
 
-* [@kla](https://github.com/kla) - Kien La
-* [@jpfuentes2](https://github.com/jpfuentes2) - Jacques Fuentes
-* [And these terrific Contributors](https://github.com/kla/php-activerecord/contributors)
-
-<http://www.phpactiverecord.org/> 
+The purpose of this fork is maintain Version 1.2.0 for future compatibility with PHP 7.x.
+Updates to the codebase will be versions 1.2.x.
 
 ## Introduction ##
 A brief summarization of what ActiveRecord is:
@@ -27,7 +26,7 @@ Of course, there are some differences which will be obvious to the user if they 
 
 ## Minimum Requirements ##
 
-- PHP 5.3+
+- PHP 7.0+
 - PDO driver for your respective database
 
 ## Supported Databases ##
@@ -72,20 +71,6 @@ ActiveRecord\Config::initialize(function($cfg)
      )
    );
 });
-```
-
-Alternatively (w/o the 5.3 closure):
-
-```php
-$cfg = ActiveRecord\Config::instance();
-$cfg->set_model_directory('/path/to/your/model_directory');
-$cfg->set_connections(
-  array(
-    'development' => 'mysql://username:password@localhost/development_database_name',
-    'test' => 'mysql://username:password@localhost/test_database_name',
-    'production' => 'mysql://username:password@localhost/production_database_name'
-  )
-);
 ```
 
 PHP ActiveRecord will default to use your development database. For testing or production, you simply set the default
@@ -167,4 +152,4 @@ echo $post->title; # 'New real title'
 
 ## Contributing ##
 
-Please refer to [CONTRIBUTING.md](https://github.com/jpfuentes2/php-activerecord/blob/master/CONTRIBUTING.md) for information on how to contribute to PHP ActiveRecord.
+Please refer to [CONTRIBUTING.md](https://github.com/SailingGoat/php-activerecord/blob/master/CONTRIBUTING.md) for information on how to contribute to PHP ActiveRecord.
