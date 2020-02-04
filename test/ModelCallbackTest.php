@@ -27,6 +27,9 @@ class ModelCallbackTest extends DatabaseTest
 	public function assert_fires($callbacks, $closure)
 	{
 		$executed = $this->register_and_invoke_callbacks($callbacks,true,$closure);
+		if (!is_array($callbacks)) {
+			$callbacks = array($callbacks);
+		}
 		$this->assert_equals(count($callbacks),count($executed));
 	}
 

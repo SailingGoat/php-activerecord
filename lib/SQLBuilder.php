@@ -206,10 +206,10 @@ class SQLBuilder
 	 *
 	 * @param Connection $connection
 	 * @param $name Underscored string
-	 * @param $values Array of values for the field names. This is used
+	 * @param array|mixed $values Array of values for the field names. This is used
 	 *   to determine what kind of bind marker to use: =?, IN(?), IS NULL
 	 * @param $map A hash of "mapped_column_name" => "real_column_name"
-	 * @return A conditions array in the form array(sql_string, value1, value2,...)
+	 * @return array A conditions array in the form array(sql_string, value1, value2,...)
 	 */
 	public static function create_conditions_from_underscored_string(Connection $connection, $name, &$values=array(), &$map=null)
 	{
@@ -217,7 +217,7 @@ class SQLBuilder
 			return null;
 
 		$parts = preg_split('/(_and_|_or_)/i',$name,-1,PREG_SPLIT_DELIM_CAPTURE);
-		$num_values = count($values);
+		$num_values = is_array($values) ? count($values) : 1;
 		$conditions = array('');
 
 		for ($i=0,$j=0,$n=count($parts); $i<$n; $i+=2,++$j)
